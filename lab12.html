@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div id="app">
+      <h1 align="center">Список студентов</h1>
+      
+      <p align='left'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur tenetur nesciunt neque harum quod dolorum facere omnis eligendi reiciendis minima ex quaerat accusamus perspiciatis et provident possimus, exercitationem similique autem?</p>
+      <form>
+        <div class="form-fields">
+          <label for="first-name">Имя</label>
+          <input v-model="firstName" id="first-name" name="first-name" type="text" placeholder="Имя">
+        </div>
+        <div class="form-fields">
+          <label for="last-name">Фамилия</label>
+          <input v-model="lastName" id="last-name" name="last-name" type="text" placeholder="Фамилия">
+        </div>
+        <p>Количество знаков: {{ counter }}</p>
+        <a class="add-btn" v-on:click="add()">Записать</a>
+        <p class="warn-message" v-if="warn">Введите данные перед записью!</p>
+      </form>
+      
+      <p>Список</p>
+      <ol class="names">
+        <li v-for="name in names" :key="name">{{ name }}</li>
+      </ol>
+      <p v-if="!names.length">Список пуст</p>
+  </div>
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
